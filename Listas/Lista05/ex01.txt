@@ -1,0 +1,16 @@
+Create database db_empresa_eventos;
+
+Use db_empresa_eventos;
+
+Create table tb_eventos(
+id int PRIMARY KEY AUTO_INCREMENT,
+nome varchar(255),
+localizacao varchar(255),
+preco_ingresso decimal (6,2)
+);
+
+Insert into tb_eventos (nome, localizacao, preco_ingresso)
+Values ('Rock in Rio', 'Cidade do Rock, Rio de Janeiro', 800.00),
+		('DevConf Brasil', 'São Paulo Expo, São Paulo', 550.50);
+        
+Select * from tb_eventos;   

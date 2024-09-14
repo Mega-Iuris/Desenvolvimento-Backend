@@ -1,0 +1,16 @@
+Create database db_floricultura;
+
+Use db_floricultura;
+
+Create table tb_flores (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    especie VARCHAR(255),
+    preco DECIMAL(5,2)
+);
+
+Insert into tb_flores (especie, preco)
+Values
+    ('Rosa', 15.99),
+    ('Lírio', 20.50);
+    
+ Select * from tb_flores;  
