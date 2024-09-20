@@ -1,0 +1,30 @@
+CREATE DATABASE db_escola_tech;
+
+USE db_escola_tech;
+
+CREATE TABLE tb_enderecos(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  logradouro VARCHAR(255),
+  bairro VARCHAR(255),
+  numero INT,
+  uf CHAR(2),
+  pais VARCHAR(255)
+);
+
+CREATE TABLE tb_filial (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(255),
+  cnpj CHAR(14),
+  id_endereco INT,
+  FOREIGN KEY (id_endereco) REFERENCES tb_enderecos(id)
+);
+
+INSERT INTO tb_enderecos (logradouro, bairro, numero, uf, pais)
+VALUES
+    ('Rua da Escola', 'Centro', 123, 'SP', 'Brasil'),
+    ('Avenida da Tecnologia', 'Jardim das Letras', 456, 'RJ', 'Brasil');
+
+INSERT INTO tb_filial (nome, cnpj, id_endereco)
+VALUES
+    ('Escola Tech São Paulo', '12345678901234', 1),
+    ('Escola Tech Rio de Janeiro', '98765432109876', 2);
